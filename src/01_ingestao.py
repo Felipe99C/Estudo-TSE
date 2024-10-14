@@ -7,7 +7,7 @@ import json
 #%%
 
 # Conexão com o SQLite
-engine = sqlalchemy.create_engine("sqlite:///E:/Estudos/Ciência de dados/Projetos/TSE_2024/Data/database.db")
+engine = sqlalchemy.create_engine("sqlite:///E:/Estudos/Ciência de dados/Projetos/TSE_2024/Estudo-TSE/Data/database.db")
 
 #copia os dados dos arquivos para a tabela 
 with open("ingestoes.json","r") as open_file:

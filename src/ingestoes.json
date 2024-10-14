@@ -1,14 +1,14 @@
 [
     {
         "table": "tb_candidatos",
-        "path": "E:/Estudos/Ciência de dados/Projetos/TSE_2024/Data/consulta_cand_2024/consulta_cand_2024_BRASIL.csv"
+        "path": "E:/Estudos/Ciência de dados/Projetos/TSE_2024/Estudo-TSE/Data/consulta_cand_2024/consulta_cand_2024_BRASIL.csv"
     },
     {
         "table": "tb_bens",
-        "path": "E:/Estudos/Ciência de dados/Projetos/TSE_2024/Data/bem_candidato_2024/bem_candidato_2024_BRASIL.csv"
+        "path": "E:/Estudos/Ciência de dados/Projetos/TSE_2024/Estudo-TSE/Data/bem_candidato_2024/bem_candidato_2024_BRASIL.csv"
     },  
     {
         "table": "tb_cassacoes",
-        "path": "E:/Estudos/Ciência de dados/Projetos/TSE_2024/Data/motivo_cassacao_2024/motivo_cassacao_2024_BRASIL.csv"
+        "path": "E:/Estudos/Ciência de dados/Projetos/TSE_2024/Estudo-TSE/Data/motivo_cassacao_2024/motivo_cassacao_2024_BRASIL.csv"
     }
 ]
