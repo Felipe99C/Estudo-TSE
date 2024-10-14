@@ -184,7 +184,7 @@ sum(case when SG_UF = 'SP' THEN tx_cor_raca_preta_parda else 0 end) as tx_cor_ra
      sum(total_cor_raca_preta_parda) as total_cor_raca_preta_parda,
      sum(total_cor_raca_preta) as total_cor_raca_preta,
      sum(total_gen_feminino) as total_gen_feminino,
-     sum(total_candidaturas) as total_candidatos
+     sum(total_candidaturas) as total_candidaturas
 
 
  FROM tb_group_uf
@@ -228,5 +228,5 @@ select * from tb_group_uf
 */
 
 select * from tb_geral
---LIMIT 100
+--LIMIT 10
 --WHERE SG_UF = 'BR'
