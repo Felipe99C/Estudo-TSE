@@ -17,6 +17,6 @@ for i in ingestoes:
     path = i['path']
     df = pd.read_csv(path, encoding='latin-1', sep=';')
     # Renomeando as colunas para minúsculas
-   # df.columns = df.columns.str.lower()
+    # df.columns = df.columns.str.lower()
     # Exportando os dados para o banco de dados
     df.to_sql(i["table"], engine, if_exists="replace", index=False)
