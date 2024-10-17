@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt        # Criação de gráficos
 import seaborn as sn                   # Visualização de dados
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox  # Adicionar imagens e textos em posições customizadas nos gráficos
 from adjustText import adjust_text      # Ajuste automático da posição de textos nos gráficos
+from sklearn import cluster
 
 def make_scatter(data, cluster=False, size=False):
 
@@ -12,7 +13,7 @@ def make_scatter(data, cluster=False, size=False):
         "y":"tx_cor_raca_preta",
         "size":"total_candidaturas", # Tamanho das bolhas representa o total de candidaturas
         "sizes":(5,300),
-        "hue":"clusterBR",
+        "hue":"cluster",
         "palette":'viridis',
         "alpha":0.6,
     }
@@ -83,3 +84,9 @@ def make_scatter(data, cluster=False, size=False):
     plt.legend(handles=handles, labels=labels)
 
     return fig
+
+def make_clusters(data, n=6):
+    model = cluster.KMeans(n_clusters=n, random_state=42)
+    model.fit(data[['tx_gen_feminino','tx_cor_raca_preta']])
+    data["cluster"] = model.labels_
+    return data
