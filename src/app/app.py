@@ -49,19 +49,25 @@ cargos_opt.sort()
 cargos_opt.remove("GERAL")
 cargos_opt = ["GERAL"] + cargos_opt # dessa forma garante que o BR será a primeira opção
 
+col1, col2 = st.columns(2)
 
 # cria um select box com os estados e passa o valor selecionado para o filtrado mais abaixo
-estado = st.sidebar.selectbox(label="Estado", placeholder="Selecione o estado para o filtro", options=uf_options)
-size = st.sidebar.checkbox("Tamando das Bolhas")
-cluster = st.sidebar.checkbox("Definir Cluster")
-n_cluster = st.sidebar.number_input("Quantidade de cluster", value=6, format="%d", max_value=10, min_value=1)
-cargo = st.sidebar.selectbox(label="Cargo", placeholder="Selecione o cargo para filtro",options=cargos_opt)
+
+
+with col1:
+    estado = st.selectbox(label="Estado", placeholder="Selecione o estado para o filtro", options=uf_options)
+    size = st.checkbox("Tamando das Bolhas")
+    cluster = st.checkbox("Definir Cluster")
+
+with col2:
+    cargo = st.selectbox(label="Cargo", placeholder="Selecione o cargo para filtro", options=cargos_opt)
+    st.markdown('')
+    n_cluster = st.number_input("Quantidade de cluster", value=6, format="%d", max_value=10, min_value=1)
 
 # Filtrando os dados pelo estado selecionado
-data = df[(df['SG_UF'] == estado) & (df["DS_CARGO"]==cargo)].copy()
+data = df[(df['SG_UF']==estado) & (df['DS_CARGO']==cargo)].copy()
 
 total_candidatos = int(data["total_candidaturas"].sum())
-
 st.markdown(f"Total de Candidaturas: {total_candidatos}")
 
 if cluster:

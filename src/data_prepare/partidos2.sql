@@ -157,16 +157,14 @@ UNION ALL
 
 select * from tb_group_uf
 
---union ALL
---
---SELECT * FROM tb_group_cargo_br
---
---UNION ALL
---
---SELECT * FROM tb_group_cargo_uf
+union ALL
+
+SELECT * FROM tb_group_cargo_br
+
+UNION ALL
+
+SELECT * FROM tb_group_cargo_uf
 
 )
 
 select * from tb_union_all
---WHERE SG_PARTIDO = 'UP'
---where SG_UF = "SP"
