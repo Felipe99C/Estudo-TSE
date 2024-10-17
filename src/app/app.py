@@ -3,9 +3,23 @@ import streamlit as st
 import pandas as pd
 import sqlalchemy
 from utils import make_scatter, make_clusters
+import os
 
-engine = sqlalchemy.create_engine("sqlite:///E:/Estudos/Ciência de dados/Projetos/TSE_2024/Estudo-TSE/Data/database.db")\
+#  insere os caminhos dos diretórios e pastas
+#  para o streamlit conseguir acessar o database mais fácil
 
+app_path = os.path.dirname(os.path.abspath(__file__))
+src_path = os.path.dirname(app_path)
+base_path = os.path.dirname(src_path)
+data_path = os.path.join(base_path, "Data")
+
+database_path = os.path.join(data_path,"database.db")
+
+print(database_path)
+#%%
+
+#engine = sqlalchemy.create_engine("sqlite:///E:/Estudos/Ciência de dados/Projetos/TSE_2024/Estudo-TSE/Data/database.db")
+engine = sqlalchemy.create_engine(f"sqlite:///{database_path}")
 with open("partidos2.sql", "r") as open_file:
     query = open_file.read()
 
