@@ -60,9 +60,9 @@ cargo = st.sidebar.selectbox(label="Cargo", placeholder="Selecione o cargo para 
 # Filtrando os dados pelo estado selecionado
 data = df[(df['SG_UF'] == estado) & (df["DS_CARGO"]==cargo)].copy()
 
-total_candidatos = data["total_candidaturas"].sum()
+total_candidatos = int(data["total_candidaturas"].sum())
 
-st.markdown(f"Total de Candidaturas: {total_candidatos:}")
+st.markdown(f"Total de Candidaturas: {total_candidatos}")
 
 if cluster:
     data = make_clusters(data, n_cluster)

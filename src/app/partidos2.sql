@@ -168,5 +168,4 @@ SELECT * FROM tb_group_cargo_uf
 )
 
 select * from tb_union_all
---WHERE SG_PARTIDO = 'UP'
---where SG_UF = "SP"
+
