@@ -20,7 +20,9 @@ print(database_path)
 
 #engine = sqlalchemy.create_engine("sqlite:///E:/Estudos/Ciência de dados/Projetos/TSE_2024/Estudo-TSE/Data/database.db")
 engine = sqlalchemy.create_engine(f"sqlite:///{database_path}")
-with open("partidos2.sql", "r") as open_file:
+
+query_path = os.path.join(app_path, "partidos2.sql")
+with open(query_path, "r") as open_file:
     query = open_file.read()
 
 df = pd.read_sql(query, engine)
