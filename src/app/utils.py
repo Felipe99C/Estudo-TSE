@@ -1,9 +1,11 @@
 
+#%%
 import matplotlib.pyplot as plt        # Criação de gráficos
 import seaborn as sn                   # Visualização de dados
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox  # Adicionar imagens e textos em posições customizadas nos gráficos
 from adjustText import adjust_text      # Ajuste automático da posição de textos nos gráficos
 from sklearn import cluster
+
 
 def make_scatter(data, cluster=False, size=False):
 
@@ -35,6 +37,7 @@ def make_scatter(data, cluster=False, size=False):
     #tx_cor_raca_preta_parda = data["total_cor_raca_preta_parda"].sum() / data["total_candidaturas"].sum() # Taxa de pessoas pretas ou pardas
 
     sn.scatterplot(**config)
+
 
     # Adicionando textos de novo
     texts = []
