@@ -5,7 +5,7 @@ import seaborn as sn                   # Visualização de dados
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox  # Adicionar imagens e textos em posições customizadas nos gráficos
 from adjustText import adjust_text      # Ajuste automático da posição de textos nos gráficos
 from sklearn import cluster
-
+from matplotlib.ticker import PercentFormatter  # Para formatar os eixos em porcentagem
 
 def make_scatter(data, cluster=False, size=False):
 
@@ -63,6 +63,11 @@ def make_scatter(data, cluster=False, size=False):
 
     plt.xlabel("Taxa de Mulheres")
     plt.ylabel("Taxa de Pessoas Pretas")
+
+     # Formatando os eixos em porcentagem
+    ax.xaxis.set_major_formatter(PercentFormatter(1))  # 1 significa que os valores são de 0 a 1
+    ax.yaxis.set_major_formatter(PercentFormatter(1))
+
 
     tx_gen_feminino = data["total_gen_feminino"].sum() / data["total_candidaturas"].sum() # Taxa de candidaturas femininas
     tx_cor_raca_preta = data["total_cor_raca_preta"].sum() / data["total_candidaturas"].sum() # Taxa de pessoas pretas

@@ -157,13 +157,13 @@ UNION ALL
 
 select * from tb_group_uf
 
---union ALL
---
---SELECT * FROM tb_group_cargo_br
---
---UNION ALL
---
---SELECT * FROM tb_group_cargo_uf
+union ALL
+
+SELECT * FROM tb_group_cargo_br
+
+UNION ALL
+
+SELECT * FROM tb_group_cargo_uf
 
 )
 
