@@ -168,3 +168,4 @@ SELECT * FROM tb_group_cargo_uf
 )
 
 select * from tb_union_all
+--where sg_uf = 'SP' and ds_cargo = 'PREFEITO'

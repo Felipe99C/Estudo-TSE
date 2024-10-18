@@ -1,3 +1,5 @@
+#%%
+
 import os
 import sqlalchemy
 import pandas as pd
@@ -14,7 +16,10 @@ data_path = os.path.join(base_path, "Data")
 database_path = os.path.join(data_path,"database_gd.db")
 engine = sqlalchemy.create_engine(f"sqlite:///{database_path}")
 
-query_path = os.path.join(prepare_path, "partidos2.sql")
+print(database_path)
+#%%
+
+query_path = os.path.join(prepare_path, "partidos3.sql")
 with open(query_path, "r") as open_file:
     query = open_file.read()
     
